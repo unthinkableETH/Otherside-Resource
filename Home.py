@@ -30,7 +30,7 @@ st.markdown(
     ### Basic assumptions and general guide to the dashboards
     - There is currently three dashboard pages available showing the price to aquire 1% or 2% or 3% of all of a certain resource from purchasing mulitple NFT plots with those resources.
     - Each dashboard also shows what resources are not available to be purchased to meet a certain percentage and a table within an expander of plot IDs used for the data visualization.
-    - Data for what NFTs are for sale and their lowest price is updated hourly from [Reservoir.tools](Reservoir.tools) from an aggregate of NFT marketplaces.
+    - Data for what NFTs are for sale and their lowest price is updated hourly from [Reservoir.tools](https://Reservoir.tools) from an aggregate of NFT marketplaces.
     - NFTs that are considered outliers by high prices are not included in the data set. The method to determine which NFTs were outliers was a IQR Upper Bound/(Q3 + 1.5 * IQR) more about this statistical method can be found [here](https://towardsdatascience.com/why-1-5-in-iqr-method-of-outlier-detection-5d07fdc82097).
     - Otherside plot NFTs have resource tier levels 1 or 2 or 3 for each resource slot, but there currently is no information on how these will compare with each other or if they will be upgradeable, so currently all tier levels
     are treated the same. In the future this could be adjusted if more guidance is given.
