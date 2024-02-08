@@ -32,7 +32,7 @@ def load_data(percent,with_or_without_flag,exclude_yes_or_no):
     url="https://raw.githubusercontent.com/unthinkableETH/Otherside-Resource/main/"+str(percent)+'%25TotalPrice_'+str(with_or_without_flag)+'_flag.csv'
     data=pd.read_csv(url, index_col=0)
     url_zero="https://raw.githubusercontent.com/unthinkableETH/Otherside-Resource/main/"+str(percent)+'%25TotalPrice_'+str(with_or_without_flag)+'_flag_zero.csv'
-    data_zero=pd.read_csv(url_zero,index_col=0)
+    data_zero=pd.read_csv(url_zero)
     data_zero_exclude=data_zero.loc[data_zero['Rarity'] <=59]
     data_with_exclude=data.loc[data['Rarity Ranking (Lowest is Rarest)'] <=59]
     if exclude_yes_or_no =='yes':
