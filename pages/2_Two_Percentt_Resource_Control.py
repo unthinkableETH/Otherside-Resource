@@ -65,13 +65,16 @@ def make_graph(data_df,percent_v):
     p.toolbar.active_tap = None   
     return(placeholder.bokeh_chart(p, use_container_width=True))
 
-def local_css(text):
-    st.markdown("<style>{"+str(text)+"}</style>", unsafe_allow_html=True)
-
-
-local_css_url=requests.get('https://raw.githubusercontent.com/unthinkableETH/Otherside-Resource/requirements/style.css')
-local_text=local_css_url.text
-local_css(local_text)
+st.markdown(
+    """
+<style>
+    div[data-testid="stExpander"] details summary p{
+    font-size: 2rem;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
 
 
 col1, col2 = st.columns([4, 1])
