@@ -38,7 +38,6 @@ def load_data(percent,with_or_without_flag,exclude_yes_or_no):
         return(data_with_exclude,data_zero_exclude)
     if exclude_yes_or_no == 'no':
          return(data,data_zero)
-     
 
 def make_graph(data_df,percent_v):
     TOOLTIPS = [
