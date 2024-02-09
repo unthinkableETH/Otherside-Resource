@@ -1,4 +1,5 @@
 bokeh==2.4.3
+urllib3<2.1
 botocore
 s3fs
 fsspec
