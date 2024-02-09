@@ -25,14 +25,14 @@ st.write("# 3% Resource Control")
 
 
 resource_type=["Ore","Anima","Root","Shard"]
-@st.cache_data(experimental_allow_widgets=True) 
+@st.cache_data(experimental_allow_widgets=True)
 def load_data(percent,with_or_without_flag,exclude_yes_or_no):
     data=pd.DataFrame()
     data_zero=pd.DataFrame()
-    url="https://raw.githubusercontent.com/unthinkableETH/Otherside-Resource/main/"+str(percent)+'%25TotalPrice_'+str(with_or_without_flag)+'_flag.csv'
-    data=pd.read_csv(url, index_col=0)
-    url_zero="https://raw.githubusercontent.com/unthinkableETH/Otherside-Resource/main/"+str(percent)+'%25TotalPrice_'+str(with_or_without_flag)+'_flag_zero.csv'
-    data_zero=pd.read_csv(url_zero)
+    s3="s3://otherside-resource/"+str(percent)+'%TotalPrice_'+str(with_or_without_flag)+'_flag.csv'
+    data=pd.read_csv(s3, index_col=0)
+    s3_zero="s3://otherside-resource/"+str(percent)+'%TotalPrice_'+str(with_or_without_flag)+'_flag_zero.csv'
+    data_zero=pd.read_csv(s3_zero)
     data_zero_exclude=data_zero.loc[data_zero['Rarity'] <=59]
     data_with_exclude=data.loc[data['Rarity Ranking (Lowest is Rarest)'] <=59]
     if exclude_yes_or_no =='yes':
@@ -64,6 +64,7 @@ def make_graph(data_df,percent_v):
     p.toolbar.active_scroll = None
     p.toolbar.active_tap = None   
     return(placeholder.bokeh_chart(p, use_container_width=True))
+
 
 st.markdown(
     """
