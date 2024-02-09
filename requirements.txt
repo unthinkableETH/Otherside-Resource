@@ -1,2 +1,4 @@
 bokeh==2.4.3
 requests
+botocore
+s3fs
