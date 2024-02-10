@@ -28,7 +28,7 @@ resource_type=["Ore","Anima","Root","Shard"]
 def load_data(percent,with_or_without_flag,exclude_yes_or_no):
     data=pd.DataFrame()
     data_zero=pd.DataFrame()
-    s3="s3://otherside-resource/"+str(percent)+'%TotalPrice_'+str(with_or_without_flag)+'_flag.csv'
+    s3="s3://otherside-resource/CSVs-for-streamlit/"+str(percent)+'%TotalPrice_'+str(with_or_without_flag)+'_flag.csv'
     data=pd.read_csv(s3, index_col=0)
     s3_zero="s3://otherside-resource/"+str(percent)+'%TotalPrice_'+str(with_or_without_flag)+'_flag_zero.csv'
     data_zero=pd.read_csv(s3_zero)
