@@ -217,4 +217,5 @@ def csv_files_for_streamlit():
     da_of_otherside(df_tp_without_flag,2,"without_flag")
     da_of_otherside(df_tp_without_flag,3,"without_flag")
 
-csv_files_for_streamlit()
+if __name__ == "__main__":
+                csv_files_for_streamlit()
