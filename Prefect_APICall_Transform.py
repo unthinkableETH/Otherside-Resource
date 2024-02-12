@@ -220,7 +220,7 @@ def csv_files_for_streamlit():
     da_of_otherside(df_tp_without_flag,3,"without_flag")
 
 if __name__ == "__main__":
-    get_repo_info.from_source(
+    csv_files_for_streamlit.from_source(
         source="https://github.com/unthinkableETH/Otherside-Resource.git",
         entrypoint="Prefect_APICall_Transform.py:csv_files_for_streamlit",
 
