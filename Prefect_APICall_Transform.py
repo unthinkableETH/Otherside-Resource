@@ -19,7 +19,7 @@ api_key_reservoir=secret_block.get()
 
 headers = {"x-api-key": api_key_reservoir}
 
-
+@task
 def query_api(otherdeed_or_expanded):
     base_url="https://api.reservoir.tools/tokens/"
     price_base_url="floor/v1?collection="
@@ -90,7 +90,7 @@ df_ur2=pd.read_csv("s3://otherside-resource/static-files/UniqueResources2.csv") 
 unique_list=df_ur["Resource"].tolist()
 cols=["Northern Resource","Southern Resource","Western Resource","Eastern Resource"]
 
-
+@task
 def da_of_otherside(df,percent_v,with_or_without):
     total_dict={}
     sort_dict={}
