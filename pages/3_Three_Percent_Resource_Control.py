@@ -25,7 +25,7 @@ st.write("# 3% Resource Control")
 
 
 resource_type=["Ore","Anima","Root","Shard"]
-@st.cache_data(experimental_allow_widgets=True)
+
 def load_data(percent,with_or_without_flag,exclude_yes_or_no):
     data=pd.DataFrame()
     data_zero=pd.DataFrame()
