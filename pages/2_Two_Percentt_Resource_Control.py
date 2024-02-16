@@ -49,7 +49,7 @@ def make_graph(data_df,percent_v):
     ("Total Number of Resource on All Plots","@{Total Number of Resource on All Plots}{0,0}")]
     
     source=ColumnDataSource(data=data_df)
-    p=figure(tooltips=TOOLTIPS, x_axis_label="Rarity Ranking (Lowest is Rarest)", y_axis_label="Total Price to Control "+str(percent_v)+"% in ETH")
+    p=figure(tooltips=TOOLTIPS, x_axis_label="Rarity Ranking (Lowest is Rarest)", y_axis_label="Total Price to Control "+str(percent_v)+"% in ETH", y_axis_type="log")
     doc=curdoc()
     doc.theme = 'dark_minimal'
     doc.add_root(p)
