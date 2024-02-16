@@ -83,7 +83,7 @@ column_config={"Resource":"Resource",
             "Rarity Ranking (Lowest is Rarest)":"Rarity",
             "Total Number of Resource on All Plots":"Total # On All Plots",
             "Type":"Type"}
-col2.write("Resources that 1% can not be purchased")
+col2.write("Resources that 1% cannot be purchased")
 with col1:
     placeholder = st.container()
     placeholder2=st.container()
