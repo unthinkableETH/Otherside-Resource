@@ -12,6 +12,7 @@ st.set_page_config(
 
 st.sidebar.success("Select Percentage of Resource Control Above")
 
+#Hides fullscreen button that was interfering with the legend
 hide_img_fs = '''
 <style>
 button[title="View fullscreen"]{
@@ -25,6 +26,7 @@ st.write("# 1% Resource Control")
 
 resource_type=["Ore","Anima","Root","Shard"]
 
+#pulls data from s3 bucket that I created
 def load_data(percent,with_or_without_flag,exclude_yes_or_no):
     data=pd.DataFrame()
     data_zero=pd.DataFrame()
@@ -39,6 +41,7 @@ def load_data(percent,with_or_without_flag,exclude_yes_or_no):
     if exclude_yes_or_no == 'no':
          return(data,data_zero)
 
+#makes graph using bokeh
 def make_graph(data_df,percent_v):
     TOOLTIPS = [
     ("Resource","@Resource"),
@@ -63,7 +66,7 @@ def make_graph(data_df,percent_v):
     p.toolbar.active_scroll = None
     p.toolbar.active_tap = None   
     return(placeholder.bokeh_chart(p, use_container_width=True))
-
+#increases font of expanded text
 st.markdown(
     """
 <style>
@@ -76,7 +79,8 @@ st.markdown(
 )
 
 col1, col2 = st.columns([4, 1])
-column_config={"Resource":"Resource",
+#custom column headers for table
+column_config={"Resource":"Resource", 
             "Total Price to Control 1% in ETH":"Price for Plots (ETH)",
             "Number of Plots Needed for 1% Control": "# of Plots Needed",
             "Plot IDs for Sale":"Plot IDs",
@@ -90,6 +94,7 @@ with col1:
     placeholder3 = st.expander("To see breakdown of the data used for the visualization, click here for a table")
     exclude1 = placeholder2.toggle('Include Very Common Ranked 60-74 Resources',value=False, help="These resources are very plentiful, acquiring 1% would be very expensive. Turning this on makes the scale of the graph much larger.", key="toggle1")
     opensea_flag1=placeholder2.toggle('Exclude Plots That are Flagged by Opensea', value=False,help="NFTs flagged by Opensea marketplace are untradeable on Opensea, and usually trade at a discount on other marketplaces as they might be stolen.",key="opensea1" )   
+    #below decides which data to pull and use for the table and graph
     if exclude1 ==False and opensea_flag1==False:
         with placeholder.container():
             data_false_false_tuple=load_data(1,"with","yes")
