@@ -4,6 +4,7 @@ from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource,Legend
 from bokeh.io import curdoc
 from bokeh.transform import factor_cmap
+from bokeh.models import BasicTickFormatter
 
 
 
@@ -63,6 +64,7 @@ def make_graph(data_df,percent_v):
     p.toolbar.active_drag = None
     p.toolbar.active_scroll = None
     p.toolbar.active_tap = None   
+    p.yaxis.formatter = BasicTickFormatter(use_scientific=False)
     return(placeholder.bokeh_chart(p, use_container_width=True))
 
 
