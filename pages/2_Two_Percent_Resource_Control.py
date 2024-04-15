@@ -68,7 +68,7 @@ def make_graph(data_df,percent_v):
     p.yaxis.ticker.base = 10
     p.yaxis.ticker.desired_num_ticks=10
     p.yaxis.ticker.max_interval=30
-    p.yaxis.ticker.mantissas=[1,2,5]
+    #p.yaxis.ticker.mantissas=[1,2,5]
     return(placeholder.bokeh_chart(p, use_container_width=True))
 
 
