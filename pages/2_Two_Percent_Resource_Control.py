@@ -64,7 +64,7 @@ def make_graph(data_df,percent_v):
     p.toolbar.active_drag = None
     p.toolbar.active_scroll = None
     p.toolbar.active_tap = None   
-    p.yaxis.f.ticker = [1, 2.5, 5, 10, 25, 50, 75, 100, 125]
+    p.yaxis.ticker = [1, 2.5, 5, 10, 25, 50, 75, 100, 125]
     return(placeholder.bokeh_chart(p, use_container_width=True))
 
 
