@@ -65,7 +65,7 @@ def make_graph(data_df,percent_v):
     p.toolbar.active_scroll = None
     p.toolbar.active_tap = None   
     p.yaxis.formatter = BasicTickFormatter(use_scientific=False)
-    p.yaxis.ticker.base = 10
+    #p.yaxis.ticker.base = 10
     p.yaxis.ticker.desired_num_ticks=10
     #p.yaxis.ticker.max_interval=30
     #p.yaxis.ticker.mantissas=[1,2,5]
