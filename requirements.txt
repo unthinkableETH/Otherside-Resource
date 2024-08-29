@@ -2,3 +2,4 @@ bokeh==2.4.3
 urllib3
 s3fs
 fsspec
+numpy==1.23.1
